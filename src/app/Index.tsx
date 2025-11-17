@@ -1,16 +1,30 @@
-import { Link } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 import { s, vs } from "react-native-size-matters";
+import FoodListItem from "../components/FoodListItem";
+import { useState } from "react";
+
+const foodItems = [
+  { label: "Pizza", cal: 75, brand: "Dominos" },
+  { label: "Apple", cal: 50, brand: "Generic" },
+  { label: "Coffee", cal: 100, brand: "Americano" },
+];
 
 export default function App() {
+  const [search, setSearch] = useState("");
   return (
     <View style={styles.container}>
-      {/* Food Item View */}
-      <View style={styles.foodComponent}>
-        <Text style={styles.foodTitle}>Pizza</Text>
-        <Text style={styles.foodText}>350 cal, Dominos</Text>
-      </View>
+      <TextInput
+        value={search}
+        onChangeText={setSearch}
+        placeholder="Search..."
+        style={styles.input}
+      />
+      {/* Food List View */}
+      <FlatList
+        data={foodItems}
+        renderItem={({ item }) => <FoodListItem item={item} />}
+        contentContainerStyle={{ gap: s(5) }}
+      />
     </View>
   );
 }
@@ -18,21 +32,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
+    backgroundColor: "#f6f6f8",
     padding: s(10),
+    gap: s(10),
   },
-  foodComponent: {
-    backgroundColor: "gainsboro",
+  input: {
+    backgroundColor: "#f2f2f2",
     padding: s(10),
-    borderRadius: s(5),
-    gap: s(5),
-  },
-  foodTitle: {
-    fontWeight: "bold",
-    fontSize: s(16),
-  },
-  foodText: {
-    color: "dimgray",
+    borderRadius: s(20),
   },
 });
