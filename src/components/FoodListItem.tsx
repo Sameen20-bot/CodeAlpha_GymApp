@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { s } from "react-native-size-matters";
@@ -19,18 +18,6 @@ const FoodListItem = ({ item }) => {
         <Text numberOfLines={1} style={styles.foodTitle}>
           {item.label}
         </Text>
-=======
-import { StyleSheet, Text, View } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import { s, vs } from "react-native-size-matters";
-
-
-const FoodListItem = ({item}) => {
-  return (
-    <View style={styles.foodComponent}>
-      <View style={{ flex: 1, gap: s(5) }}>
-        <Text style={styles.foodTitle}>{item.label}</Text>
->>>>>>> 127300acd33f28f829cb60c2bf2f81d1bb520cca
         <Text style={styles.foodText}>
           {item.cal} cal, {item.brand}
         </Text>
