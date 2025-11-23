@@ -44,12 +44,11 @@ const styles = StyleSheet.create({
   foodTitle: {
     fontWeight: "bold",
     fontSize: s(16),
-<<<<<<< HEAD
     width: s(250),
-=======
->>>>>>> 127300acd33f28f829cb60c2bf2f81d1bb520cca
   },
   foodText: {
     color: "dimgray",
   },
 });
+
+

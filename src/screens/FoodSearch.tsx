@@ -71,7 +71,6 @@ const FoodSearch = () => {
       )}
 
       {loading && <Text>Loading...</Text>}
-
       <FlatList
         data={foodItems}
         renderItem={({ item }) => <FoodListItem item={item} />}
